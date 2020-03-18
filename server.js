@@ -29,7 +29,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }))
-const whitelist = ['http://localhost:3000', 'https://butterfly-1.herokuapp.com/']
+const whitelist = ['http://localhost:3000', 'https://butterflyeffect-1.herokuapp.com/']
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
