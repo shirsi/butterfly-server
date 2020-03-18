@@ -4,14 +4,14 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const session = require('express-session')
 require('dotenv').config()
-
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/butterfly'
 PORT = process.env.PORT || 3000;
 //=======config=============//
 const app = express()
 
 
 
-mongoose.connect(process.env.MONGOD_BURI || 'mongodb://localhost:27017/butterfly', {useNewUrlParser:true})
+mongoose.connect(mongoURI, {useNewUrlParser:true})
 mongoose.connection.once('open', () => {
   console.log('connect to mongoose...');
 })
