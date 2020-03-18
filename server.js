@@ -11,7 +11,7 @@ const app = express()
 
 
 
-mongoose.connect('mongodb://localhost:27017/butterfly', {useNewUrlParser:true})
+mongoose.connect('mongodb://heroku_2c718kh3:uqersdfea3215c93a8iqglgp3g@ds151450.mlab.com:51450/heroku_2c718kh3', {useNewUrlParser:true})
 mongoose.connection.once('open', () => {
   console.log('connect to mongoose...');
 })
