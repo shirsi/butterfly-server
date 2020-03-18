@@ -11,7 +11,7 @@ const app = express()
 
 
 
-mongoose.connect('mongodb://localhost:27017/butterfly', {useNewUrlParser:true})
+mongoose.connect(process.env.MONGOD_BURI || 'mongodb://localhost:27017/butterfly', {useNewUrlParser:true})
 mongoose.connection.once('open', () => {
   console.log('connect to mongoose...');
 })
