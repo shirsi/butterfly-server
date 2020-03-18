@@ -5,7 +5,7 @@ const cors = require('cors')
 const session = require('express-session')
 require('dotenv').config()
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/butterfly'
-PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 //=======config=============//
 const app = express()
 
