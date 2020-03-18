@@ -17,7 +17,7 @@ mongoose.connection.once('open', () => {
 })
 //=======mongoose=============//
 mongoose.connection.on('error', () => {
-  console.log(err.message + 'is Mongod not running?');
+  console.log(error.message + 'is Mongod not running?');
 })
 mongoose.connection.on('disconnected', () => {
   console.log('mongo disconnected');
