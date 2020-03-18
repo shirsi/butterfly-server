@@ -29,10 +29,11 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }))
-const whitelist = ['http://localhost:3000', 'https://fathomless-sierra-68956.herokuapp.com']
+const whitelist = ['http://localhost:3000', 'https://butterflyeffect-1.herokuapp.com']
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
+      console.log('hi');
       callback(null, true)
     } else {
       callback(new Error('Not allowed by CORS'))
