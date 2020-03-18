@@ -29,19 +29,27 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }))
-const whitelist = ['http://localhost:3000', 'https://butterflyeffect-1.herokuapp.com/']
 
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      console.log('hi');
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
-  }
-}
-app.use(cors(corsOptions))
+  app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://butterflyeffect-1.herokuapp.com/')
+    next()
+  })
+
+
+
+// const whitelist = ['http://localhost:3000', 'https://butterflyeffect-1.herokuapp.com/']
+//
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//     if (whitelist.indexOf(origin) !== -1) {
+//       console.log('hi');
+//       callback(null, true)
+//     } else {
+//       callback(new Error('Not allowed by CORS'))
+//     }
+//   }
+// }
+// app.use(cors(corsOptions))
 //=======controllers=============//
 const butterflyController = require("./controllers/butterfly.js")
 app.use("/butterfly", butterflyController);
