@@ -9,9 +9,10 @@ PORT = process.env.PORT || 3000;
 //=======config=============//
 const app = express()
 
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/butterfly';
 
 
-mongoose.connect('mongodb://heroku_2c718kh3:uqersdfea3215c93a8iqglgp3g@ds151450.mlab.com:51450/heroku_2c718kh3', {useNewUrlParser:true})
+mongoose.connect(MONGODB_URI, {useNewUrlParser:true})
 mongoose.connection.once('open', () => {
   console.log('connect to mongoose...');
 })
