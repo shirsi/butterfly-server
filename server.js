@@ -33,6 +33,7 @@ const whitelist = ['http://localhost:3000', 'https://butterflyeffect-1.herokuapp
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
+      console.log('hi');
       callback(null, true)
     } else {
       callback(new Error('Not allowed by CORS'))
