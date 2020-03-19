@@ -33,7 +33,7 @@ app.use(session({
 
 
 
-const whitelist = ['http://localhost:3000', 'https://butterflyeffect-1.herokuapp.com/']
+const whitelist = ['http://localhost:3000', 'https://butterflyeffect-1.herokuapp.com']
 
 const corsOptions = {
   origin: function (origin, callback) {
